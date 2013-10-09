@@ -1,0 +1,65 @@
+{% extends 'page.html'%}
+{% load static %}
+{% block breadcrumbs %}
+<li><a href="{% url 'website:venue'%}">The Venue</a></li>
+<li class="current"><a href="#">Reaching the Venue</a></li>
+<li><a href="{% url 'website:contact'%}">Contact Us</a></li>
+{% endblock %}
+<style type="text/css">
+	div {visibility:hidden;
+</style>
+{% block content %}
+<script type="text/javascript">
+function show(elem)
+{
+    ele = document.getElementById(elem)
+    if(ele.style.visibility == "hidden")
+    {
+        document.getElementById(elem).style.visibility = "visible";
+        document.getElementById(elem).style.display = "block";
+    }
+    else
+    {
+        document.getElementById(elem).style.visibility = "hidden";
+        document.getElementById(elem).style.display = "none";
+    }
+}
+</script>
+<h3>Quick guide to reach IIT Bombay campus</h3>
+<p>Powai is an eastern suburb in North-Eastern part of Mumbai
+<p>Here is how you can reach IIT Bombay from <a onClick=show('airport')>Airport</a>
+<p>Here is how you can reach IIT Bombay from various important stations
+<ul>
+	<li><a onClick=show('dadar')>From Dadar</a></li>
+	<li><a onClick=show('thane')>From Thane</a></li>
+	<li><a onClick=show('bdts')>From Bandra Terminus</a></li>
+	<li><a onClick=show('ltt')>From Lokmanya Tilak Terminus</a></li>
+	<li><a onClick=show('bct')>From Mumbai Central</a></li>
+	<li><a onClick=show('cst')>From Chatrapati Shivaji Terminus</a></li>
+</ul>
+
+<a href="{% static 'website/docs/iitb_map.pdf' %}" >This</a> will help you to find places inside campus.
+
+<div id="dadar" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=dadar+station&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FZMqIgEdYXRXBCkdh7S_3M7nOzHZNplA5uMmIw%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=&amp;sll=19.037454,72.908363&amp;sspn=0.188885,0.308647&amp;mra=ls&amp;ie=UTF8&amp;ll=19.037454,72.908363&amp;spn=0.112729,0.100371&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=dadar+station&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FZMqIgEdYXRXBCkdh7S_3M7nOzHZNplA5uMmIw%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=&amp;sll=19.037454,72.908363&amp;sspn=0.188885,0.308647&amp;mra=ls&amp;ie=UTF8&amp;ll=19.037454,72.908363&amp;spn=0.112729,0.100371&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+<div id="thane" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=Thane+Railway+Station,+Station+Road+Kopri,+Thane,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FY7CJAEd_4BZBCkjQ1Rf37jnOzF9iI2abfvySQ%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=4&amp;oq=IIT&amp;sll=19.155222,72.944412&amp;sspn=0.094375,0.154324&amp;mra=pd&amp;ie=UTF8&amp;ll=19.155222,72.944412&amp;spn=0.06341,0.058068&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=Thane+Railway+Station,+Station+Road+Kopri,+Thane,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FY7CJAEd_4BZBCkjQ1Rf37jnOzF9iI2abfvySQ%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=4&amp;oq=IIT&amp;sll=19.155222,72.944412&amp;sspn=0.094375,0.154324&amp;mra=pd&amp;ie=UTF8&amp;ll=19.155222,72.944412&amp;spn=0.06341,0.058068&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+<div id="bdts" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=Bandra+Terminus,+Naupada,+Bandra+East,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FWLeIgEdQHdXBCm3sivHGcnnOzF9Gr08r3UTdQ%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=0&amp;oq=Bandra+ter&amp;sll=19.155709,72.945614&amp;sspn=0.094375,0.154324&amp;mra=ls&amp;ie=UTF8&amp;ll=19.155709,72.945614&amp;spn=0.079966,0.075124&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=Bandra+Terminus,+Naupada,+Bandra+East,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FWLeIgEdQHdXBCm3sivHGcnnOzF9Gr08r3UTdQ%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=0&amp;oq=Bandra+ter&amp;sll=19.155709,72.945614&amp;sspn=0.094375,0.154324&amp;mra=ls&amp;ie=UTF8&amp;ll=19.155709,72.945614&amp;spn=0.079966,0.075124&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+<div id="ltt" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=Lokmanya+Tilak+Terminus,+Pipeline+Road,+Kurla,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FSb7IgEdST5YBCGh8y-GNk5pZinbn-jom8jnOzGh8y-GNk5pZg%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=0&amp;oq=Lokmany&amp;sll=19.101053,72.879009&amp;sspn=0.094406,0.154324&amp;mra=ls&amp;ie=UTF8&amp;ll=19.101053,72.879009&amp;spn=0.063015,0.045739&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=Lokmanya+Tilak+Terminus,+Pipeline+Road,+Kurla,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FSb7IgEdST5YBCGh8y-GNk5pZinbn-jom8jnOzGh8y-GNk5pZg%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=0&amp;oq=Lokmany&amp;sll=19.101053,72.879009&amp;sspn=0.094406,0.154324&amp;mra=ls&amp;ie=UTF8&amp;ll=19.101053,72.879009&amp;spn=0.063015,0.045739&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+<div id="bct" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=Mumbai+Central+station,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FVt4IQEd3SJXBCFssj0JqjsoWSmzxd6Nbs7nOzFssj0JqjsoWQ%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=&amp;sll=19.0472,72.879606&amp;sspn=0.188874,0.308647&amp;mra=ls&amp;ie=UTF8&amp;t=m&amp;ll=19.0472,72.879606&amp;spn=0.163085,0.117661&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=Mumbai+Central+station,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FVt4IQEd3SJXBCFssj0JqjsoWSmzxd6Nbs7nOzFssj0JqjsoWQ%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=&amp;sll=19.0472,72.879606&amp;sspn=0.188874,0.308647&amp;mra=ls&amp;ie=UTF8&amp;t=m&amp;ll=19.0472,72.879606&amp;spn=0.163085,0.117661" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+<div id="cst" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=Chhatrapati+Shivaji+Terminus,+Dadabhai+Naoroji+Road,+Chhatrapati+Shivaji+Terminus+Area,+Fort,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FbcPIQEdx2NXBCEsqp-mtX2llCnxDFp4J87nOzEsqp-mtX2llA%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=1&amp;oq=Chatra&amp;sll=19.0472,72.879606&amp;sspn=0.188874,0.308647&amp;mra=ls&amp;ie=UTF8&amp;ll=19.04719,72.879524&amp;spn=0.189112,0.106723&amp;t=m&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=Chhatrapati+Shivaji+Terminus,+Dadabhai+Naoroji+Road,+Chhatrapati+Shivaji+Terminus+Area,+Fort,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FbcPIQEdx2NXBCEsqp-mtX2llCnxDFp4J87nOzEsqp-mtX2llA%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=1&amp;oq=Chatra&amp;sll=19.0472,72.879606&amp;sspn=0.188874,0.308647&amp;mra=ls&amp;ie=UTF8&amp;ll=19.04719,72.879524&amp;spn=0.189112,0.106723&amp;t=m" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+
+<div id="airport" style="visibility:hidden;display:none;">
+<iframe width="475" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.co.in/maps?f=d&amp;source=s_d&amp;saddr=Chhatrapati+Shivaji+International+Airport,+Andheri+East,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FQFLIwEdg-NXBCGuqHTEYBrMHilHKb2ZUMjnOzGuqHTEYBrMHg%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=4&amp;oq=IIT&amp;sll=19.099667,72.883154&amp;sspn=0.094407,0.154324&amp;mra=pd&amp;ie=UTF8&amp;t=m&amp;ll=19.110379,72.895527&amp;spn=0.029763,0.042183&amp;output=embed"></iframe><br /><small><a href="https://www.google.co.in/maps?f=d&amp;source=embed&amp;saddr=Chhatrapati+Shivaji+International+Airport,+Andheri+East,+Mumbai,+Maharashtra&amp;daddr=IIT+Main+Gate&amp;hl=en&amp;geocode=FQFLIwEdg-NXBCGuqHTEYBrMHilHKb2ZUMjnOzGuqHTEYBrMHg%3BFRrUIwEdep5YBCldyp4n8sfnOzFZy8ueURQugA&amp;aq=4&amp;oq=IIT&amp;sll=19.099667,72.883154&amp;sspn=0.094407,0.154324&amp;mra=pd&amp;ie=UTF8&amp;t=m&amp;ll=19.110379,72.895527&amp;spn=0.029763,0.042183" style="color:#0000FF;text-align:left">View Larger Map</a></small>
+</div>
+{% endblock %}

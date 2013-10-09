@@ -1,0 +1,12 @@
+{% extends 'page.html'%}
+
+{% block breadcrumbs %}
+<li><a href="{% url 'website:schedule' %}">Schedule</a></li>
+<li><a href="{% url 'website:invited-speakers'%}">Invited Speakers</a></li>
+<li class="current"><a href="#">Accepted Abstracts</a></li>
+{% endblock %}
+
+{% block content %}
+<h3>Accepted Abstracts</h3>
+<h4>Coming Soon . . .</h4>
+{% endblock %}

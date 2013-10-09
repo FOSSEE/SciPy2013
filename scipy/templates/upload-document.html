@@ -1,0 +1,12 @@
+{% extends 'page.html' %}
+{% block content %}
+<div class="large-6 large-centered columns">
+  <form class="form-signin" action="/accounts/upload-document/" method="POST" enctype="multipart/form-data"> {% csrf_token %}
+    <h3 class="form-signin-heading">Upload your abstract</h3>
+    {{ form }}
+    <input type="hidden" name = "next" value="{{ next }}">
+    <button class="success expand" type="submit">Submit</button>
+  </form>
+  <h6>Dont have an scipy account? <a href="/accounts/register"><u>Register Here.</u></a></h6>
+</div>
+{% endblock %}

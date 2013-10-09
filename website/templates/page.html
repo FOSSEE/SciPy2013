@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>Scipy India 2013 | IIT Bombay</title>
+
+  <!-- If you are using CSS version, only link these 2 files, you may add app.css to use for your overrides if you like. -->
+  <link rel="stylesheet" href="{% static 'css/normalize.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/foundation.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/override.css' %}" />
+  
+  <script src="js/vendor/custom.modernizr.js"></script>
+
+</head>
+<body>
+  
+  <div id="header-wrapper">
+    <div id="header-inner">
+      <nav class="top-bar">
+        <ul class="title-area">
+          <li class="name">
+            <h1><a href="{% url 'website:home' %}">Scipy India 2013</a></h1>
+          </li>
+        </ul>
+        
+        <section class="top-bar-section">
+          <ul class="right">
+            <li class="divider"></li>
+            <li><a href="{% url 'website:call-for-papers' %}">Call for Papers</a>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">Conference</a>
+              <ul class="dropdown">
+                <li><a href="{% url 'website:schedule' %}">Schedule</a></li>
+                <li><a href="{% url 'website:invited-speakers' %}">Invited Speakers</a></li>
+                <li><a href="{% url 'website:accepted-abstracts' %}">Accepted Abstracts</a></li>
+              </ul>
+            </li>
+            <li class="divider"></li>
+            <li><a href="{% url 'website:register' %}">Register</a></li>
+            <li class="divider"></li>
+            <li><a href="{% url 'website:sponsors' %}">Sponsors</a></li>
+            <li class="divider"></li>
+            <li class="has-dropdown"><a href="#">About</a>
+              <ul class="dropdown">
+                <li><a href="{% url 'website:venue' %}">The Venue</a></li>
+                <li><a href="{% url 'website:reaching-venue' %}">Reaching the Venue</a></li>
+                <li><a href="{% url 'website:contact' %}">Contact Us</a></li>
+              </ul>
+            </li>
+            
+          </ul> <!-- /right -->
+        </section>
+      </nav>
+    </div> <!-- /header-inner -->
+  </div> <!-- /header-wrapper -->
+  
+  <div id="page-jumbo">
+    <div id="page-jumbo-inner" class="row">
+      <ul class="breadcrumbs left">
+        {% block breadcrumbs %}
+        {% endblock %}
+      </ul>
+    </div> <!-- /jumbo-inner -->
+  </div> <!-- /jumbo -->
+  
+  <div id="content-wrapper">
+    <div id="content-inner" class="row">
+      {% block content %}
+      {% endblock %}
+    </div> <!-- /content-inner -->
+  </div> <!-- /content-wrapper -->
+  
+  <div id="footer-wrapper">
+    <div id="footer-inner" class="row">
+      <div class="large-4 columns">
+        <h6 align="center">Contact Us</h6>
+        <p><br>
+          Hardik Ghaghada <br>
+          Phone No: +918879261812 <br>
+          Email id: hardik@fossee.in <br>
+        </p>
+        <p>
+          FOSSEE Office <br>
+          Phone No: (022)-2576-4111 / 4133
+        </p>
+      </div>
+      
+      <div class="large-4 columns" style="text-align: center;">
+        <h6 align="center">The Venue</h6>
+          <a href="http://www.iitb.ac.in" target="_blank"><img src="{% static 'img/iitb-logo.gif' %}"></a>
+        <p style="text-align: justify;">
+          The Indian Institute of Technology Bombay is a public engineering 
+          institution located in Powai, Mumbai, India. It has been ranked among 
+          the top engineering colleges in India.
+        </p>
+      </div>
+      
+      <div id="social" class="large-4 columns">
+        <h6 align="center">Keep in touch with us</h6>
+        <br><br>
+          <a href="https://www.facebook.com/scipydotin" target="_blank"><img src="{% static 'img/facebook.png' %}"></a>
+          <a href="http://twitter.com/scipyindia" target="_blank"><img src="{% static 'img/twitter.png' %}"></a>
+          <a href="https://plus.google.com/b/114283139455008176105/" target="_blank"><img src="{% static 'img/googleplus.png' %}"></a>
+          <a href="http://www.youtube.com/channel/UCG8ryNcKPWgOPjl9zuDGVTA" target="_blank"><img src="{% static 'img/youtube.png' %}"></a>
+      </div>
+    </div> <!-- /footer-inner -->
+    
+    <div id="credits" class="row">
+        <div class="left">
+          &copy; 2013 Scipy India
+        </div>
+        <div class="right">
+          Designed by <a href="http://fossee.in" target="_blank">FOSSEE</a>
+        </div>
+        <div class="clearfix"></div>
+     </div> <!-- /credits -->
+  </div> <!-- /footer-wrapper-->
+  
+	<script>
+	  document.write('<script src=' +
+	  ('__proto__' in {} ? '{% static 'js/vendor/zepto' %}' : '{% static 'js/vendor/jquery' %}') +
+	  '.js><\/script>')
+	  </script>
+	  <script src="{% static 'js/foundation/foundation.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.alerts.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.clearing.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.cookie.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.dropdown.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.forms.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.joyride.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.magellan.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.orbit.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.placeholder.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.reveal.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.section.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.tooltips.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.topbar.js' %}"></script>
+	  <script src="{% static 'js/foundation/foundation.interchange.js' %}"></script>
+	  <script>
+	    $(document).foundation();
+	 </script>
+	 
+	 <!-- Google Analytics -->
+   <script>
+   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+   ga('create', 'UA-44697375-1', 'scipy.in');
+   ga('send', 'pageview');
+   </script>
+
+</body>
+</html>

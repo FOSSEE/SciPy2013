@@ -1,0 +1,30 @@
+.clearfix{
+  clear: both;
+}
+.top-bar .title-area h1 a{
+  font-family: gtrg;
+  font-size: 12px;
+}
+.top-bar-section li{
+  font-family: gtrg;
+  font-size: 12px;
+}
+.breadcrumbs{
+  background-color: transparent;
+  border: none;
+  padding-left: 0;
+  padding-top: 35px;
+}
+.breadcrumbs > *:before {
+  content: "/";
+  color: #424242;
+  margin: 0 0.75em;
+  position: relative;
+  top: 1px; 
+}
+.breadcrumbs a{
+  color: #222222;
+}
+.breadcrumbs .current a{
+  color: #ffffff;
+}

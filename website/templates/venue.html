@@ -1,0 +1,34 @@
+{% extends 'page.html'%}
+{% load static %}
+{% block breadcrumbs %}
+<li class="current"><a href="#">The Venue</a></li>
+<li><a href="{% url 'website:reaching-venue' %}">Reaching the Venue</a></li>
+<li><a href="{% url 'website:contact'%}">Contact Us</a></li>
+{% endblock %}
+
+{% block content %}
+<div>
+<p>A guide on <a href={% url 'website:reaching-venue' %}>Reaching to IITB campus</a>
+<!--center><table>
+<tr><td><img src="{% static 'website/img/iitb-logo.jpg' %}" width=100><td>Lecture Complex Hall - 11, <br />Indian Institute of Technology - Bombay, <br /> Powai, <br /> Mumbai - 400076</tr>
+</table-->
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
+<script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
+
+<div id="map" style="height: 400px"></div>
+<script>
+var map = new L.Map('map');
+var cloudmadeUrl = 'http://{s}.tile.cloudmade.com/be91f32b5d4c447098ec65bf12897d9c/997/256/{z}/{x}/{y}.png',
+    cloudmadeAttrib = 'Map data &copy; 2013 OpenStreetMap contributors, Imagery &copy; 2013 CloudMade',
+    cloudmade = new L.TileLayer(cloudmadeUrl, {maxZoom: 28, attribution: cloudmadeAttrib});
+var lch11 = new L.LatLng(19.13069, 72.91667); // geographical point (longitude and latitude)
+map.setView(lch11, 16).addLayer(cloudmade);
+
+var lch11_location = new L.LatLng(19.13069,72.91667);
+var lch11_marker = new L.Marker(lch11_location);
+map.addLayer(lch11_marker);
+lch11_marker.bindPopup("<b>LCH11, <br />Indian Institue of Technology - Bombay, </b> <br /> Powai, <br /> Mumbai - 400076<br /><b>SciPy India 2013</b>").openPopup();
+</script>
+</center>
+</div>
+{% endblock %}

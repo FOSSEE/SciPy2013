@@ -1,0 +1,69 @@
+<html>
+    <head>
+                
+        <style>
+            html, body{
+                margin: 0;
+                padding: 0;
+            }
+            
+            #header-wrapper{
+                height: 100px;
+                background: #86c543;
+            }
+            #header-inner{
+                width: 800px;
+                background: blue;
+                margin: 0 auto;
+                                // i will tel you why :)
+                                // there is no tag like text-align or align to center a div like you center text or h1
+                                // then how do you do it ??
+                                // by using the margin tweak :)
+            }
+            
+            #content-wrapper{
+                height: 500px;
+                background: #ffffff;
+            }
+            
+            #footer-wrapper{
+                height: 300px;
+                background: #424242;
+            }
+            // ok now do me a favour , give the width: 800 to headinner and background blue
+            // now check browser... stomethhing wrong, nopes, you did not put any content in that div :) now it right??
+            // no no  content-css is innerright :), put some text inside the header-inner mann :)
+            //copy paster the curreent in your editor and tell me what you see :)
+            //text became smaller and moved to the corner
+            // dont worrly about the text where is the blue div ?
+            //its insidw the green div
+            // is it centered ?? nop // then make it :)
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        <!-- now lets give this a little style -->
+        
+        <div id="header-wrapper">
+            <div id="header-inner">
+                This is the head of the page
+            </div> <!-- /header-inner -->
+        </div> <!-- /header-wrapper -->
+        
+        <div id="content-wrapper">
+            <div id="content-inner">
+                <p>Hello World</p>
+            </div> <!-- /content-inner -->
+        </div> <!-- /content-wrapper -->
+        
+        <div id="footer-wrapper">
+            <div id="footer-inner">
+            
+            </div> <!-- /footer-inner -->
+        </div> <!-- /footer-wrapper -->
+    
+    </body>
+    
+</html>
