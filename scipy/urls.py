@@ -6,7 +6,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
 
     # Website urls
-    url(r'^2013/', include('website.urls', namespace='website')),
     url(r'^', include('website.urls', namespace='website')),
     # Accounts urls
     url(r'accounts/login/$', 'scipy.views.user_login'),
