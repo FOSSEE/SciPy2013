@@ -10,7 +10,7 @@ urlpatterns = patterns('',
     url(r'^contact/$', 'website.views.contact_page', name='contact'),
     
     # Call for papers
-    url(r'^call-for-papers/$', 'website.views.call_for_papers_page', name='call-for-papers'),
+    url(r'^call-for-proposals/$', 'website.views.call_for_papers_page', name='call-for-proposals'),
     
     # Conference Section
     url(r'^schedule/$', 'website.views.schedule_page', name='schedule'),
