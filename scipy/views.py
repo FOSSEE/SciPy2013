@@ -25,7 +25,7 @@ def user_login(request):
         else:
             form = UserLoginForm()
 
-        next = '/accounts/upload-document/'
+        next = '/2013/accounts/upload-document/'
         if 'next' in request.GET:
             next = request.GET['next']
 
@@ -35,7 +35,7 @@ def user_login(request):
         context['next'] = next
         return render_to_response('login.html', context)
     else:
-        return HttpResponseRedirect('/accounts/upload-document')
+        return HttpResponseRedirect('/2013/accounts/upload-document')
 
 # User Logout View
 def user_logout(request):
@@ -49,7 +49,7 @@ def user_register(request):
             form = UserRegisterForm(request.POST)
             if form.is_valid:
                 form.save()
-            return HttpResponseRedirect('/accounts/upload-document')
+            return HttpResponseRedirect('/2013/accounts/upload-document')
         else:
             form = UserRegisterForm()
         context = {}
@@ -57,7 +57,7 @@ def user_register(request):
         context['form'] = form
         return render_to_response('register.html', context)
     else:
-        return HttpResponseRedirect('/accounts/upload-document')
+        return HttpResponseRedirect('/2013/accounts/upload-document')
 
 # User Profile View
 def user_profile(request):
@@ -67,7 +67,7 @@ def user_profile(request):
         context['form'] = UserProfileForm(instance=request.user)
         return render_to_response('profile.html', context)
     else:
-        return HttpResponseRedirect('/accounts/login?next=/accounts/profile')
+        return HttpResponseRedirect('/2013/accounts/login?next=/2013/accounts/profile')
 
 # Document Upload View
 @login_required
@@ -92,8 +92,3 @@ def upload_document(request):
     context.update(csrf(request))
     context['form'] = DocumentUploadForm()
     return render_to_response('upload-document.html', context)
-    
-    
-    
-    
-    
