@@ -4,9 +4,9 @@
   <form class="form-signin" action="/2013/accounts/login/" method="POST" enctype="multipart/form-data"> {% csrf_token %}
     <h3 class="form-signin-heading">Please sign in</h3>
     {{ form.as_p }}
-    <input type="hidden" name = "next" value="{{ next }}">
+    <input type="hidden" name = "next" value="/2013/{{ next }}">
     <button class="success expand" type="submit">Sign in</button>
   </form>
-  <h6>Dont have an scipy account? <a href="/accounts/register"><u>Register Here.</u></a></h6>
+  <h6>Dont have an scipy account? <a href="/2013/accounts/register"><u>Register Here.</u></a></h6>
 </div>
 {% endblock %}

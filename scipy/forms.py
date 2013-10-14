@@ -36,6 +36,7 @@ class DocumentUploadForm(forms.ModelForm):
     widgets = {
     'title':forms.TextInput(attrs={'placeholder':'Title of your Talk'}),
     'objective':forms.TextInput(attrs={'placeholder':'Objective of the talk'}),
-    'abstract':forms.Textarea(attrs={'placeholder':'Abstract in 400 to 700 '}),
+    'abstract':forms.Textarea(attrs={'placeholder':'Abstract in 400 to 700 words'}),
+    'bio':forms.Textarea(attrs={'placeholder':'Tell us something about yourself in a few words'}),
     'links':forms.TextInput(attrs={'placeholder':'Link to the code (if any) or relevant links'}),
     }

@@ -2,7 +2,10 @@
 {% block content %}
 <div class="row">
 {% if status == "up" %}
-<h4>We have succcessfully received your proposal. Thank You !</h4>
+<div data-alert class="alert-box success">
+<p>We have succcessfully received your proposal. Thank You !</p>
+<a href="#" class="close">&times;</a>
+</div>
 {% endif %}
 <h4>Call for Proposals</h4>
   <p align="justify">
