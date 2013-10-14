@@ -70,25 +70,27 @@ def user_profile(request):
         return HttpResponseRedirect('/2013/accounts/login?next=/2013/accounts/profile')
 
 # Document Upload View
-@login_required
 def upload_document(request):
-    if request.method == 'POST':
-        form = DocumentUploadForm(request.POST, request.FILES)
-        if form.is_valid():
-            data = form.save(commit=False)
-            data.user = request.user
-            data.verified = False
-            data.save()
-            return HttpResponseRedirect("/2013/call-for-proposals/?status=up")
+    if request.user.is_authenticated():
+        if request.method == 'POST':
+            form = DocumentUploadForm(request.POST, request.FILES)
+            if form.is_valid():
+                data = form.save(commit=False)
+                data.user = request.user
+                data.verified = False
+                data.save()
+                return HttpResponseRedirect("/2013/call-for-proposals/?status=up")
+            else:
+                context = {}
+                context.update(csrf(request))
+                context['form'] = form
+                return render_to_response('upload-document.html', context)
         else:
-            context = {}
-            context.update(csrf(request))
-            context['form'] = form
-            return render_to_response('upload-document.html', context)
+            form = DocumentUploadForm()
+            
+        context = {}
+        context.update(csrf(request))
+        context['form'] = DocumentUploadForm()
+        return render_to_response('upload-document.html', context)
     else:
-        form = DocumentUploadForm()
-        
-    context = {}
-    context.update(csrf(request))
-    context['form'] = DocumentUploadForm()
-    return render_to_response('upload-document.html', context)
+        return HttpResponseRedirect('/2013/accounts/login')
