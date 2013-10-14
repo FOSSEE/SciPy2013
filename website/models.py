@@ -9,5 +9,11 @@ def get_presentation_dir(instance, filename):
 
 class Paper(models.Model):
     user = models.ForeignKey(User)
-    document = models.FileField(upload_to=get_document_dir)
+    title = models.CharField(max_length=250)
+    affiliation = models.CharField(max_length=250)
+    objective = models.CharField(max_length=512)
+    abstract = models.TextField(max_length=700)
+    bio = models.TextField(max_length=500)
+    links = models.CharField(max_length=128)
+    attachments = models.FileField(upload_to=get_document_dir)
     verified = models.NullBooleanField()

@@ -30,7 +30,12 @@ class UserProfileForm(UserChangeForm):
 		fields = ('first_name', 'last_name', 'email', 'username')
 
 class DocumentUploadForm(forms.ModelForm):
-
   class Meta:
     model = Paper
     exclude = ('user', 'verified')
+    widgets = {
+    'title':forms.TextInput(attrs={'placeholder':'Title of your Talk'}),
+    'objective':forms.TextInput(attrs={'placeholder':'Objective of the talk'}),
+    'abstract':forms.Textarea(attrs={'placeholder':'Abstract in 400 to 700 '}),
+    'links':forms.TextInput(attrs={'placeholder':'Link to the code (if any) or relevant links'}),
+    }

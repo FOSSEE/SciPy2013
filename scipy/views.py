@@ -79,7 +79,7 @@ def upload_document(request):
             data.user = request.user
             data.verified = False
             data.save()
-            return HttpResponseRedirect("/2013/call-for-papers/?status=up")
+            return HttpResponseRedirect("/2013/call-for-proposals/?status=up")
         else:
             context = {}
             context.update(csrf(request))
