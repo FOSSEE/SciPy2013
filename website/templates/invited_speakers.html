@@ -1,11 +1,14 @@
 {% extends 'page.html'%}
-
-{% block breadcrumbs %}
-<li><a href="{% url 'website:schedule' %}">Schedule</a></li>
-<li class="current"><a href="#">Invited Speakers</a></li>
-<li><a href="{% url 'website:accepted-abstracts'%}">Accepted Abstracts</a></li>
-{% endblock %}
-
+{% load static %}
 {% block content %}
-<h3>Invited Speakers</h3>
+<div class="row">
+<h4>Invited Speakers</h4>
+<table>
+<tr><td><img width="165" src="{% static 'img/ondrej.png'%}"><td><p align="justify"><a href="http://ondrejcertik.com/" target="_blank"><b>Dr. Ondrej Certik</b></a> is a scientist at Los Alamos National Laboratory. He holds a PhD in Chemical Physics from University of Nevada, Reno. Dr. Ondrej has major contributions in the <a href="http://www.numpy.org/" target="_blank">NumPy</a> & <a href="http://www.sympy.org/" target="_blank">SymPy</a> libraries. He has been active debian user since 2001 and is an offical team member of Debian Python Modules Team (DPMT), Python Applications Packaging Team (PAPT) & Debian Scientific Computing Team (pkg-scicomp). </p>
+</table>
+<table>
+<tr><td><img width="165" src="{% static 'img/ajith.png'%}"><td><p align="justify"><b>Dr. B. P. Ajith Kumar</b>, a scientist working with the <a href="http://www.iuac.res.in/" target="_blank">Inter University accelerator Centre of India</a>. His main area of work is development of instrumentation for particle accelerators and associated experiments, including radio-frequency accelerating structures, control and data acquisition systems, digital and radio frequency electronics modules. He initiated the <a href="http://www.iuac.res.in/~elab/phoenix/" target="_blank">PHOENIX</a> project by designing a parallel port based interface and organized a training program for teachers in 2005, and continuing with it. Dr. Ajith Kumar has been a user and propagator of Free Software in the field of education for several years.</p>
+</table>
+
+</table>
 {% endblock %}
