@@ -25,9 +25,9 @@
   border-bottom: 3px solid #ffffff;
 }
 #first{
-  padding: 25px 0 0 0;
 }
 #first h5, #sponsors h5, #last h5{
+  padding: 25px 0 0 0;
   font-weight: lighter;
   padding: 10px 0 25px 0;
   font-family: gtrg;
@@ -123,4 +123,31 @@
 }
 .sponsor p{
   text-align: justify;
+}
+#reach-scipy{
+  height: 400px;
+  padding: 5px 0.9375em;
+  margin-bottom: 25px;
+}
+#reach-scipy .side-nav{
+  height: 400px;
+  background: #f5f5f5;
+  padding: 25px;
+}
+#reach-scipy #map{
+  height: 400px;
+  padding: 0;
+  background: #ffffff;
+  border: 1px solid #f5f5f5;
+}
+#map-loader{
+    display: block;
+    margin: 25% auto 0;
+}
+#mappy{
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
 }
