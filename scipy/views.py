@@ -30,7 +30,7 @@ def user_login(request):
             next = request.GET['next']
         
         status = ''        
-        if status in request.GET:
+        if 'status' in request.GET:
             status = request.GET['status']
             
         context = {}
