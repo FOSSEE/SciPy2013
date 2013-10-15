@@ -58,13 +58,17 @@
       </nav>
     </div> <!-- /header-inner -->
   </div> <!-- /header-wrapper -->
-  
   <div id="page-jumbo">
     <div id="page-jumbo-inner" class="row">
       <ul class="breadcrumbs left">
         {% block breadcrumbs %}
         {% endblock %}
       </ul>
+      <ul class="breadcrumbs right">
+        {% block userblock %}
+        {% endblock %}
+      </ul>
+
     </div> <!-- /jumbo-inner -->
   </div> <!-- /jumbo -->
   

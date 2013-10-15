@@ -1,5 +1,14 @@
 {% extends 'page.html'%}
+
+{% block userblock %}
+{% if current_user != "anonymous" %}
+<li><a href="#"> {{ current_user }}</a></li>
+<li><a href="/2013/accounts/logout">Logout</a></li>
+{% endif %}
+{% endblock %}
 {% block content %}
+
+
 <div class="row">
 {% if status == "up" %}
 <div data-alert class="alert-box success">
@@ -7,6 +16,7 @@
 <a href="#" class="close">&times;</a>
 </div>
 {% endif %}
+
 <h4>Call for Proposals</h4>
   <p align="justify">
     We look forward to submissions for presentations at SciPy India 2013.  Please submit an abstract of  400 to 700 words describing the topic, including its relevance to Python.  Only submissions with an actual implementation will be considered for presentation (i.e. proposals to implement the code are not acceptable, partial implementations are acceptable so long as they demonstrate the features discussed).  Please provide links to your code if this is an open source implementation.  

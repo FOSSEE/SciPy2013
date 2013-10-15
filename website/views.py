@@ -21,8 +21,14 @@ def call_for_papers_page(request):
     if 'status' in request.GET:
         status = request.GET['status']
 
+    if request.user.is_anonymous():
+        current_user = "anonymous"
+    else:
+        current_user = request.user
+
     context = {
-      'status': status
+      'status': status,
+      'current_user': current_user
     }
     return render_to_response('papers.html', context)
 

@@ -1,4 +1,12 @@
 {% extends 'page.html' %}
+
+{% block userblock %}
+{% if current_user != "anonymous" %}
+<li><a href="#"> {{ current_user }}</a></li>
+<li><a href="/2013/accounts/logout">Logout</a></li>
+{% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="large-6 large-centered columns">
   <form class="form-signin" action="/2013/accounts/upload-document/" method="POST" enctype="multipart/form-data"> {% csrf_token %}

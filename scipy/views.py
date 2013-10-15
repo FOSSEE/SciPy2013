@@ -45,7 +45,7 @@ def user_login(request):
 # User Logout View
 def user_logout(request):
     logout(request)
-    return HttpResponseRedirect('/2013')
+    return HttpResponseRedirect('/')
 
 # User Register View
 def user_register(request):
@@ -89,6 +89,7 @@ def upload_document(request):
                 context = {}
                 context.update(csrf(request))
                 context['form'] = form
+                context['current_user'] = request.user
                 return render_to_response('upload-document.html', context)
         else:
             form = DocumentUploadForm()
@@ -96,6 +97,7 @@ def upload_document(request):
         context = {}
         context.update(csrf(request))
         context['form'] = DocumentUploadForm()
+        context['current_user'] = request.user
         return render_to_response('upload-document.html', context)
     else:
         return HttpResponseRedirect('/2013/accounts/login')
