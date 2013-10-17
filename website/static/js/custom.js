@@ -68,9 +68,5 @@ var shivaji_description = 'Buy a ticket to Kanjurmarg (central line) at the loca
     $("#from").html(from);
     $("#description").html(description);
     $("#mappy").html(clicked);
-
-
-    /* Map loading display */
-
   });
 });
