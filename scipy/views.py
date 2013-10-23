@@ -96,13 +96,13 @@ def upload_document(request):
                 context['form'] = form
                 context.update(csrf(request))
                 return render_to_response('upload-document.html', context)
-            if content_size > 5242880:
+            elif content_size > 5242880:
                 large_file_msg = "File size exceeds 5MB"
                 context['large_file'] = large_file_msg
                 context['form'] = form
                 context.update(csrf(request))
                 return render_to_response('upload-document.html', context)
-            if form.is_valid():
+            elif form.is_valid():
                 data = form.save(commit=False)
                 data.user = request.user
                 data.verified = False
