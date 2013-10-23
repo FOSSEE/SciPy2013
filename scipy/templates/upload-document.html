@@ -8,10 +8,17 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="large-6 large-centered columns">
   <form class="form-signin" action="/2013/accounts/upload-document/" method="POST" enctype="multipart/form-data"> {% csrf_token %}
     <h3 class="form-signin-heading">Submit Proposal</h3>
     {{ form }}
+    {% if invalid_file %}
+        <div data-alert class="alert-box alert">
+            <span>{{ invalid_file }}</span>
+            <a href="#" class="close">&times;</a>
+        </div>
+    {% endif %}
     <input type="hidden" name = "next" value="{{ next }}">
     <button class="success expand" type="submit">Submit</button>
   </form>
