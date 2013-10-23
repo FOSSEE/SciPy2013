@@ -82,17 +82,25 @@ def user_profile(request):
 def upload_document(request):
     allowed_files = ['doc', 'docx', 'txt', 'pdf']
     invalid_file_msg = None
+    large_file_msg = None
     context = {}
+    context['current_user'] = request.user
     if request.user.is_authenticated():
         if request.method == 'POST':
             form = DocumentUploadForm(request.POST, request.FILES)
             content_type = request.FILES['attachments'].content_type.split('/')[1]
+            content_size = request.FILES['attachments'].size
             if not content_type in allowed_files:
                 invalid_file_msg = "Only PDF, DOC, DOCX & TXT files are allowed"
-                context['current_user'] = request.user
                 context['invalid_file'] = invalid_file_msg
-                context.update(csrf(request))
                 context['form'] = form
+                context.update(csrf(request))
+                return render_to_response('upload-document.html', context)
+            if content_size > 5242880:
+                large_file_msg = "File size exceeds 5MB"
+                context['large_file'] = large_file_msg
+                context['form'] = form
+                context.update(csrf(request))
                 return render_to_response('upload-document.html', context)
             if form.is_valid():
                 data = form.save(commit=False)
@@ -110,8 +118,6 @@ def upload_document(request):
             form = DocumentUploadForm()
         context.update(csrf(request))
         context['form'] = DocumentUploadForm()
-        context['current_user'] = request.user
-        context['invalid_file'] = invalid_file_msg
         return render_to_response('upload-document.html', context)
     else:
         return HttpResponseRedirect('/2013/accounts/login')
