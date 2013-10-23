@@ -88,8 +88,9 @@ def upload_document(request):
     if request.user.is_authenticated():
         if request.method == 'POST':
             form = DocumentUploadForm(request.POST, request.FILES)
-            content_type = request.FILES['attachments'].content_type.split('/')[1]
-            content_size = request.FILES['attachments'].size
+            attachment = request.FILES['attachments']
+            content_type = attachment.split('/')[1]
+            content_size = attachment.size
             if not content_type in allowed_files:
                 invalid_file_msg = "Only PDF, DOC, DOCX & TXT files are allowed"
                 context['invalid_file'] = invalid_file_msg
