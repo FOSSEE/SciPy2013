@@ -19,6 +19,12 @@
             <a href="#" class="close">&times;</a>
         </div>
     {% endif %}
+    {% if large_file %}
+        <div data-alert class="alert-box alert">
+            <span>{{ large_file }}</span>
+            <a href="#" class="close">&times;</a>
+        </div>
+    {% endif %}
     <input type="hidden" name = "next" value="{{ next }}">
     <button class="success expand" type="submit">Submit</button>
   </form>
