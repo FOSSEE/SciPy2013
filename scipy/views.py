@@ -49,15 +49,19 @@ def user_logout(request):
 
 # User Register View
 def user_register(request):
+    context = {}
     if request.user.is_anonymous():
         if request.method == 'POST':
             form = UserRegisterForm(request.POST)
-            if form.is_valid:
+            if form.is_valid():
                 form.save()
-            return HttpResponseRedirect('/2013/accounts/upload-document')
+                return HttpResponseRedirect('/2013/accounts/upload-document')
+            else:
+                context.update(csrf(request))
+                context['form'] = form
+                return render_to_response('register.html', context)
         else:
             form = UserRegisterForm()
-        context = {}
         context.update(csrf(request))
         context['form'] = form
         return render_to_response('register.html', context)
@@ -76,9 +80,20 @@ def user_profile(request):
 
 # Document Upload View
 def upload_document(request):
+    allowed_files = ['doc', 'docx', 'txt', 'pdf']
+    invalid_file_msg = None
+    context = {}
     if request.user.is_authenticated():
         if request.method == 'POST':
             form = DocumentUploadForm(request.POST, request.FILES)
+            content_type = request.FILES['attachments'].content_type.split('/')[1]
+            if not content_type in allowed_files:
+                invalid_file_msg = "Only PDF, DOC, DOCX & TXT files are allowed"
+                context['current_user'] = request.user
+                context['invalid_file'] = invalid_file_msg
+                context.update(csrf(request))
+                context['form'] = form
+                return render_to_response('upload-document.html', context)
             if form.is_valid():
                 data = form.save(commit=False)
                 data.user = request.user
@@ -93,11 +108,10 @@ def upload_document(request):
                 return render_to_response('upload-document.html', context)
         else:
             form = DocumentUploadForm()
-            
-        context = {}
         context.update(csrf(request))
         context['form'] = DocumentUploadForm()
         context['current_user'] = request.user
+        context['invalid_file'] = invalid_file_msg
         return render_to_response('upload-document.html', context)
     else:
         return HttpResponseRedirect('/2013/accounts/login')
