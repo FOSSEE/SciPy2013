@@ -79,7 +79,20 @@
   color: #ffffff;
 }
 #footer-inner #social img{
-  margin: 25px 0 0 20px;
+  margin: 15px 0 0 20px;
+}
+#social #fossee-logo{
+
+}
+#social #fossee-logo img{
+    width: 60%;
+    margin-left: 20%;
+    padding: 5px;
+    background: #ffffff;
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+         -o-border-radius: 5px;
+            border-radius: 5px;
 }
 #credits{
   padding: 15px 0 0 0;
