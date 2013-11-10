@@ -88,37 +88,17 @@ def upload_document(request):
     if request.user.is_authenticated():
         if request.method == 'POST':
             form = DocumentUploadForm(request.POST, request.FILES)
-            attachment = request.FILES['attachments']
-            content_type = attachment.content_type.split('/')[1]
-            content_size = attachment.size
-            if not content_type in allowed_files:
-                invalid_file_msg = "Only PDF, DOC, DOCX & TXT files are allowed"
-                context['invalid_file'] = invalid_file_msg
-                context['form'] = form
-                context.update(csrf(request))
-                return render_to_response('upload-document.html', context)
-            elif content_size > 5242880:
-                large_file_msg = "File size exceeds 5MB"
-                context['large_file'] = large_file_msg
-                context['form'] = form
-                context.update(csrf(request))
-                return render_to_response('upload-document.html', context)
-            elif form.is_valid():
+            if form.is_valid():
                 data = form.save(commit=False)
                 data.user = request.user
                 data.verified = False
                 data.save()
                 return HttpResponseRedirect("/2013/call-for-proposals/?status=up")
-            else:
-                context = {}
-                context.update(csrf(request))
-                context['form'] = form
-                context['current_user'] = request.user
-                return render_to_response('upload-document.html', context)
         else:
             form = DocumentUploadForm()
         context.update(csrf(request))
-        context['form'] = DocumentUploadForm()
+        context['form'] = form
         return render_to_response('upload-document.html', context)
     else:
         return HttpResponseRedirect('/2013/accounts/login')
+        
