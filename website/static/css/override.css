@@ -113,6 +113,7 @@
                   .lt-ie9 .row { *zoom: 1; }
                   .lt-ie9 .row:before, .row:after { content: " "; display: table; }
                   .lt-ie9 .row:after { clear: both; }
+
 .lt-ie9 .top-bar {
       background: #2f2f2f;
         *zoom: 1;
