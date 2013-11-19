@@ -37,7 +37,7 @@
 #first ul li, #sponsors ul li{
   text-align: center;
 }
-#first ul li img{
+#first img{
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -o-border-radius: 10px;
