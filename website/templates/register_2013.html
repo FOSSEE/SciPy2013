@@ -1,8 +1,10 @@
 {% extends 'page.html'%}
+{% load static %}
 {% block content %}
 <div class="row">
 <h3>Register</h3>
 <div class="row">
+<div class="large-8 columns">
     <div class="reg"> 
         <table>
             <th>Tickets</th>
@@ -44,7 +46,33 @@
     <br><br>
     We regret the inconvinience caused earlier. We had some issues with the payment gateway.
     </div>
+    
+    <!-- Modal test -->
+    <div id="myModal" class="reveal-modal">
+        <ul class="large-grid-2" style="text-align: center">
+           <img src="{% static 'img/Front-lg.png' %}"> 
+           <img src="{% static 'img/Back-lg.png' %}" width="360px"> 
+        </ul>
+        <p style="text-align: center">*Colours are for representation purpose and may slightly vary from the original.</p>
+        <a class="close-reveal-modal">&#215;</a>
+    </div>
+    
+    <a href="#" data-reveal-id="myModal">Click Me For A Modal</a>
+</div> 
+
+<div class="large-4 columns">
+    <h6><u>T-Shirt Preview</u></h6>
+    <div class="row">
+        <ul class="large-grid-2">
+        <a href="#" data-reveal-id="myModal">
+           <img src="{% static 'img/Front-sm.png' %}"> 
+           <img src="{% static 'img/Back-sm.png' %}" width="90px"> 
+        </a>
+        </ul>
+    </div>
+</div>
 
 </div> <!-- /row -->
 </div> <!-- /row -->
+<div class="reveal-modal-bg" style="display: none"></div>
 {% endblock %}
