@@ -17,3 +17,9 @@ class Paper(models.Model):
     links = models.CharField(max_length=128)
     attachments = models.FileField(upload_to=get_document_dir)
     verified = models.NullBooleanField()
+
+class Comment(models.Model):
+    paper = models.ForeignKey(Paper)
+    comment_by = models.ForeignKey(User)
+    comment = models.CharField(max_length=500)
+

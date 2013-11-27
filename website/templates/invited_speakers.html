@@ -1,5 +1,11 @@
 {% extends 'page.html'%}
 {% load static %}
+
+{% block breadcrumbs %}
+<li><a href="{% url 'website:invited-speakers'%}">Invited Speakers</a></li>
+<li><a href="{% url 'website:list-abstracts'%}">List of Abstracts</a></li>
+{% endblock %}
+
 {% block content %}
 <div class="row">
 <h4>Invited Speakers</h4>

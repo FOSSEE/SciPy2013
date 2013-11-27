@@ -56,23 +56,3 @@ class DocumentUploadForm(forms.ModelForm):
             elif content_size > 5242880:
                 raise forms.ValidationError('File size exceeds 5MB')
         return attachments
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

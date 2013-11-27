@@ -6,17 +6,43 @@
 <li><a href="{% url 'website:list-abstracts'%}">List of Abstracts</a></li>
 {% endblock %}
 
+{% block userblock %}
+{% if current_user != "anonymous" %}
+<li><a href="#"> {{ current_user }}</a></li>
+<li><a href="/2013/accounts/logout">Logout</a></li>
+{% endif %}
+{% endblock %}
+
+
 {% block content %}
-<center><h4>{{ paper.title }}</h4></center>
+<center><h4><u>{{ paper.title }}</u></h4></center>
 
 <p><strong>{{ paper.user.first_name }} {{ paper.user.last_name }}</strong></p>
 <p><strong>{{ paper.bio }}</strong></p>
+<hr>
 <p><strong>Abstract: </strong></p>
 <div id="abstract">
 <p>{{ paper.abstract }}</p>
 </div>
 <p>Affiliation: <strong>{{ paper.affiliation }}</strong></p>
 <p>Links: {{ paper.links }}</p>
-<p><a href="/downloads/{{ paper.attachments }}">Attachment</a></p>
+{% if attachment%}
+<p><a class="button tiny success" href="/downloads/{{ paper.attachments }}">View Attachment</a></p>
+{% endif %}
 
+<hr>
+{% if reviewer %}
+    <h5>Comments</h5>
+    {% for comment in comments %}
+    <div class="comment">
+        <strong>{{ comment.comment_by.first_name }} {{ comment.comment_by.last_name }}</strong>
+        <p>{{ comment.comment|safe }}</p>
+    </div>
+    {% endfor %}
+    <form action="/abstract-details/{{ paper.id }}/" method='POST' enctype="multipart/form-data">
+    {% csrf_token %}
+        <textarea rows="5" cols="100" name="comment"></textarea>
+        <input class="button tiny success" type=submit value="Comment">
+    </form>
+{% endif %}
 {% endblock %}
