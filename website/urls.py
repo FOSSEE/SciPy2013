@@ -15,6 +15,8 @@ urlpatterns = patterns('',
     # Conference Section
     url(r'^schedule/$', 'website.views.schedule_page', name='schedule'),
     url(r'^invited-speakers/$', 'website.views.invited_speakers_page', name='invited-speakers'),
+    url(r'^abstracts/$', 'website.views.list_of_abstracts', name='list-abstracts'),
+    url(r'^abstract-details/(?P<paper_id>\d+)/$', 'website.views.abstract_details', name="abstract-details"),
     url(r'^accepted-abstracts/$', 'website.views.accepted_abstracts_page', name='accepted-abstracts'),
     
     # Register

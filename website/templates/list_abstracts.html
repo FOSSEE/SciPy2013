@@ -1,0 +1,18 @@
+{% extends 'page.html'%}
+
+{% block breadcrumbs %}
+<li><a href="{% url 'website:invited-speakers'%}">Invited Speakers</a></li>
+<li><a href="{% url 'website:list-abstracts'%}">List of Abstracts</a></li>
+{% endblock %}
+
+{% block content %}
+<center><h4>List of Abstracts</h4></center>
+
+<table align="center">
+<th>Title
+<th>Speaker
+{% for paper in papers %}
+    <tr><td><a href="{% url 'website:abstract-details' paper.id %}">{{ paper.title }}</a></td><td>{{ paper.user.first_name }} {{ paper.user.last_name }}</td></tr>
+{% endfor %}
+</table>
+{% endblock %}
