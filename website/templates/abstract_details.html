@@ -37,7 +37,7 @@
         <p>{{ comment.comment|safe }}</p>
     </div>
     {% endfor %}
-    <form action="/abstract-details/{{ paper.id }}/" method='POST' enctype="multipart/form-data">
+    <form action="/2013/abstract-details/{{ paper.id }}/" method='POST' enctype="multipart/form-data">
     {% csrf_token %}
         <textarea rows="5" cols="100" name="comment"></textarea>
         <input class="button tiny success" type=submit value="Comment">
