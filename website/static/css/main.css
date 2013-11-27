@@ -197,3 +197,14 @@
   left: 0;
   bottom: 0;
 }
+
+/* for list of abstracts */
+#abstract{
+    background-color:#F0F8FF;
+    border: 1px solid #C9C9C9;
+    border-radius: 5px 5px 5px 5px;
+    margin-bottom: 10px;
+    min-width: 805px;
+    padding: 10px;
+    text-align: justify;
+}
