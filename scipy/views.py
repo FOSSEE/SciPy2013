@@ -17,7 +17,11 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return HttpResponseRedirect(request.POST['next'])
+                    reviewers = ['jaidevd', 'prabhu', 'jarrod']
+                    if user.username in reviewers:
+                        return HttpResponseRedirect('/2013/abstracts')
+                    else: 
+                        return HttpResponseRedirect(request.POST['next'])
                 else:
                     return HttpResponse("Not active")
             else:
