@@ -7,10 +7,8 @@
 {% endblock %}
 
 {% block userblock %}
-{% if current_user != "anonymous" %}
 <li><a href="#"> {{ current_user }}</a></li>
 <li><a href="/2013/accounts/logout">Logout</a></li>
-{% endif %}
 {% endblock %}
 
 

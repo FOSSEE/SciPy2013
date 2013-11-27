@@ -5,20 +5,15 @@
 <li><a href="{% url 'website:list-abstracts'%}">List of Abstracts</a></li>
 {% endblock %}
 
-{% block userblock %}
-<li><a href="#"> {{ user }}</a></li>
-<li><a href="/2013/accounts/logout">Logout</a></li>
-{% endblock %}
-
 
 {% block content %}
 <center><h4>List of Abstracts</h4></center>
-
 <table align="center">
 <th>Title
 <th>Speaker
 {% for paper in papers %}
-    <tr><td><a href="{% url 'website:abstract-details' paper.id %}">{{ paper.title }}</a></td><td>{{ paper.user.first_name }} {{ paper.user.last_name }}</td></tr>
+    <tr><td>{{ paper.title }}</td><td>{{ paper.user.first_name }} {{ paper.user.last_name }}</td></tr>
 {% endfor %}
 </table>
+Note: These are not selected abstracts. Our committee is reviewing the abstracts & list of same will be published soon.
 {% endblock %}
