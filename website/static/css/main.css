@@ -57,7 +57,7 @@
   font-size: .9em;
 }
 #previous-conference{
-  height: 200px;
+  height: 155px;
   border:2px solid #86c543;
   text-align: center;
 }
@@ -66,8 +66,22 @@
   text-align: center;
 }
 #previous-conference td{
-  padding: 19px 0;
+  padding: 11.75px;
 }
+#imp-dates{
+  margin-bottom: 5px;
+  height: 140px;
+  border:2px solid #86c543;
+  text-align: center;
+}
+#imp-dates th{
+  width: 1000px;
+  text-align: center;
+}
+#imp-dates td{
+  padding: 9px;
+}
+
 #footer-wrapper{
   padding: 25px 0 25px 0;
   background: #111111;
