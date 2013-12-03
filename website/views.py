@@ -44,7 +44,7 @@ def invited_speakers_page(request):
 def list_of_abstracts(request):
     user = request.user
     context = {}
-    reviewers = ['jaidevd', 'prabhu', 'jarrod']
+    reviewers = ['jaidevd', 'prabhu', 'jarrod', 'hardythe1']
     papers = Paper.objects.all()
     if user.username not in reviewers:
         context['papers'] = papers
@@ -57,7 +57,7 @@ def list_of_abstracts(request):
 def abstract_details(request, paper_id=None):
     user = request.user
     context = {}
-    reviewers = ['jaidevd', 'prabhu', 'jarrod']
+    reviewers = ['jaidevd', 'prabhu', 'jarrod', 'hardythe1']
     if user.username in reviewers:
         context['reviewer'] = True
         paper = Paper.objects.get(id=paper_id)
