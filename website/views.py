@@ -87,7 +87,11 @@ def abstract_details(request, paper_id=None):
 
 
 def accepted_abstracts_page(request):
-    return render_to_response('accepted_abstracts.html')
+    context = {}
+    accepted_papers = Paper.objects.filter(verified=True)
+    context['papers'] = accepted_papers
+    context.update(csrf(request))
+    return render_to_response('accepted_abstracts.html', context)
 
 # Register
 def register_page(request):

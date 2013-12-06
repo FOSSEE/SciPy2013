@@ -1,12 +1,20 @@
 {% extends 'page.html'%}
 
 {% block breadcrumbs %}
-<li><a href="{% url 'website:schedule' %}">Schedule</a></li>
 <li><a href="{% url 'website:invited-speakers'%}">Invited Speakers</a></li>
-<li class="current"><a href="#">Accepted Abstracts</a></li>
+<li><a href="{% url 'website:list-abstracts'%}">Selected Abstracts</a></li>
 {% endblock %}
 
+
 {% block content %}
-<h3>Accepted Abstracts</h3>
-<h4>Coming Soon . . .</h4>
+<center><h4>Selected Abstracts</h4></center>
+<table align="center">
+<th>Title
+<th>Speaker
+{% for paper in papers %}
+    <tr><td>{{ paper.title }}</td><td>{{ paper.user.first_name }} {{ paper.user.last_name }}</td></tr>
+{% endfor %}
+</table>
+<p>* This is not the complete list, we have selected some talks as Pecha Kucha style talks & the list will be updated soon. </p>
+<p># Schedule of the talks & other details to follow.
 {% endblock %}
