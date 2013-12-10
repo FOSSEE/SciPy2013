@@ -347,15 +347,15 @@
             var pid = $(this).data("pid");
             $("#ajax-loader").show();
             $.ajax({
-                url: "/ajax-get-abstract/",
+                url: "/2013/ajax-get-abstract/",
                 type: "POST",
                 data: {
                     pid: pid
                 },
                 dataType: "html",
                 success: function(data) {
-                    $(this).trigger('click');
                     $("#abs").html(data);
+                    $(this).trigger('click');
                     $("#ajax-loader").hide();
                 }
             });
