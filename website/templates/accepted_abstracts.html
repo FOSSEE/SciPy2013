@@ -5,16 +5,28 @@
 <li><a href="{% url 'website:accepted-abstracts'%}">Selected Abstracts</a></li>
 {% endblock %}
 
-
 {% block content %}
 <center><h4>Selected Abstracts</h4></center>
 <table align="center">
-<th>Title
-<th>Speaker
-{% for paper in papers %}
-    <tr><td>{{ paper.title }}</td><td>{{ paper.user.first_name }} {{ paper.user.last_name }}</td></tr>
-{% endfor %}
+    <th>Title</th>
+    <th>Speaker</th>
+    <th>Type</th>
+
+    {% for paper in papers %}
+        <tr>
+            <td>{{ paper.title }}</td>
+            <td>{{ paper.user.first_name }} {{ paper.user.last_name }}</td>
+            <td>
+                {% if  paper.talk_type %}
+                    Pecha Kucha
+                {% else %}
+                    Talk
+                {% endif %}
+            </td>
+        </tr>
+    {% endfor %}
 </table>
-<p>* This is not the complete list, we have selected some talks as Pecha Kucha style talks & the list will be updated soon. </p>
-<p># Schedule of the talks & other details to follow.
+<p>* <a href="http://en.wikipedia.org/wiki/PechaKucha" target="_blank">What is Pecha Kucha ?.</a>
+<p>* This is the final list of selected abstracts.</p>
+<p># Schedule of the talks & other details to follow.<p>
 {% endblock %}
