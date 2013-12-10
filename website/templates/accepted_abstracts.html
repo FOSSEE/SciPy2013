@@ -1,8 +1,9 @@
 {% extends 'page.html'%}
 
 {% block breadcrumbs %}
+<li class="current"><a href="">Selected Abstracts</a></li>
 <li><a href="{% url 'website:invited-speakers'%}">Invited Speakers</a></li>
-<li><a href="{% url 'website:accepted-abstracts'%}">Selected Abstracts</a></li>
+<li><a href="{% url 'website:schedule'%}">Schedule</a></li>
 {% endblock %}
 
 {% block content %}
