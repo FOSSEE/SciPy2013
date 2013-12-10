@@ -36,7 +36,10 @@ def call_for_papers_page(request):
 
 # Conference Section
 def schedule_page(request):
-    return render_to_response('schedule.html')
+    context = {}
+    papers = Paper.objects.filter(verified=True)
+    context['papers'] = papers    
+    return render_to_response('schedule.html', context)
 
 def invited_speakers_page(request):
     return render_to_response('invited_speakers.html')
