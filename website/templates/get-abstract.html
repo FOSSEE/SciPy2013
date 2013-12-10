@@ -1,0 +1,16 @@
+<h3>{{ paper.title }}</h3>
+<hr>
+<h4 class="subheader">By-<i>{{ paper.user.first_name  }} {{ paper.user.last_name }}</i></h4>
+
+<h5>Speaker Bio</h5>
+<p>
+    {{ paper.bio }}
+</p>
+{% if paper.attachments %}
+    <a href="{{ paper.attachments.url }}" class="button small"> View Abstract</a>
+{% else %}
+    <h5>Abstract</h5>
+    <p style="text-align:justify">
+        {{ paper.abstract }}
+    </p>
+{% endif %}

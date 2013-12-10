@@ -1,5 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.context_processors import csrf
+from django.views.decorators.csrf import csrf_exempt
 from django.shortcuts import render_to_response
 from models import *
 
@@ -103,3 +104,14 @@ def register_page(request):
 # Sponsors
 def sponsors_page(request):
     return render_to_response('sponsors.html')
+
+@csrf_exempt
+def ajax_get_abstract(request):
+    if request.method == 'POST':
+        pid = request.POST['pid']
+        paper = Paper.objects.get(pk=pid)
+        context = {
+            'paper': paper
+        }
+    return render_to_response('get-abstract.html', context)
+

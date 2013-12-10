@@ -24,4 +24,7 @@ urlpatterns = patterns('',
     
     # Sponsors
     url(r'^sponsors/$', 'website.views.sponsors_page', name='sponsors'),
+
+    # ajax
+    url(r'^ajax-get-abstract/$', 'website.views.ajax_get_abstract', name='ajax_get_abstract'),
 )
