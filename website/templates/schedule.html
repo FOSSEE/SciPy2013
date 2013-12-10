@@ -354,8 +354,8 @@
                 },
                 dataType: "html",
                 success: function(data) {
-                    $("#abs").html(data);
                     $(this).trigger('click');
+                    $("#abs").html(data);
                     $("#ajax-loader").hide();
                 }
             });
