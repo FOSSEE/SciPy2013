@@ -346,6 +346,7 @@
         $(".abs-link").click(function() {
             var pid = $(this).data("pid");
             $("#ajax-loader").show();
+            $("#abs").html("");
             $.ajax({
                 url: "/2013/ajax-get-abstract/",
                 type: "POST",
