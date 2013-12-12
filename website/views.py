@@ -89,7 +89,6 @@ def abstract_details(request, paper_id=None):
         return render_to_response('not_allowed.html', context)
         
 
-
 def accepted_abstracts_page(request):
     context = {}
     accepted_papers = Paper.objects.filter(verified=True)

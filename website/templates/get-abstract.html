@@ -4,7 +4,7 @@
 
 <h5>Speaker Bio</h5>
 <p>
-    {{ paper.bio }}
+    {{ paper.bio|safe }}
 </p>
 {% if paper.attachments %}
     <a href="{{ paper.attachments.url }}" class="button small"> View Abstract</a>
